@@ -124,9 +124,6 @@ jobs:
         git apply ${GITHUB_WORKSPACE}/of_patch/SPR-support.patch
         git apply ${GITHUB_WORKSPACE}/of_patch/mifs.patch
         git apply ${GITHUB_WORKSPACE}/of_patch/partitionmanager-unmap-all-dynamic-partitions.patch
-        cd ${GITHUB_WORKSPACE}
-        cd ${GITHUB_WORKSPACE}/OrangeFox/fox_${{ inputs.MANIFEST_BRANCH }}/system/core
-        git apply ${GITHUB_WORKSPACE}/of_patch/fs_mgr-Yes-you-can.patch
 
     - name: Clone Device Tree
       run: |
