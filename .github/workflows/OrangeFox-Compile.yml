@@ -104,7 +104,7 @@ jobs:
       if: inputs.MANIFEST_BRANCH == '12.1'
       run: |
         cd ${GITHUB_WORKSPACE}
-        git clone https://github.com/ymdzq/scripts of_patch
+        git clone https://github.com/xiaomi-sm8450-mondrian/ofox_scripts of_patch
         cd ${GITHUB_WORKSPACE}/OrangeFox/fox_${{ inputs.MANIFEST_BRANCH }}/bootable/recovery
         git fetch https://github.com/sekaiacg/twrp_recovery android-12.1 && git cherry-pick b65c915
         git apply ${GITHUB_WORKSPACE}/of_patch/early-translation.patch
@@ -122,6 +122,7 @@ jobs:
         git apply ${GITHUB_WORKSPACE}/of_patch/display-mode.patch
         git apply ${GITHUB_WORKSPACE}/of_patch/SPR-support.patch
         git apply ${GITHUB_WORKSPACE}/of_patch/mifs.patch
+        git apply ${GITHUB_WORKSPACE}/of_patch/partitionmanager-unmap-all-dynamic-partitions.patch
 
     - name: Clone Device Tree
       run: |
